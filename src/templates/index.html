@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% include "header.html" %}
+
+
+{% block title %} PASSWORD GENERATOR APP {% endblock %}
+
+{% block body %} 
+<!-- Creating flash messages in flask -->
+<!-- {% with messages = get_flashed_messages() %}
+{% if messages %}
+{% for message in messages %}
+<div class="container">
+  <div class="notification is-success my-4">
+    <button class="delete"></button>
+    <h1 class="has-text-centered">{{message}}</h1>
+  </div>
+</div>
+{% endfor %}
+{% endif %}
+{% endwith  %} -->
+<div class="container">
+  <div class="notification is-success my-4">
+    <button class="delete"></button>
+    <h1 class="has-text-centered">{{value}}</h1>
+  </div>
+</div>
+<!-- Flash messages creation ends here -->
+<!-- we can ad here our all html body stuff -->
+<section class="section">
+ <div class="container">
+  <div class="columns is-centered">
+    <div class="column is-half is-narrow">
+      <div class="card">
+        <div class="card-content mx-6">
+          <div class="content">
+           <form action="/generatePassword" method="post">
+             <input class="input" type="text" name="passwordlength" placeholder="Length of password(should be min 8 chars)" required>
+              <div class="buttons is-cenetred my-5 mx-6">
+                <button type="submit" class="button is-outlined is-info">
+                  Generate Strong Password
+                </button>
+                <!-- <p class="control">
+                  <button class="button is-outlined is-gray">
+                    Copy to Clipboard
+                  </button>
+                </p> -->
+              </div>
+            </div>
+           </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+ </div>
+</section>
+<!-- we can ad here our all html body stuff ends -->
+{% endblock %}
